@@ -23,5 +23,14 @@ public class TestLibretto {
 		
 		Libretto vc = libretto.votiUguali(25);
 		System.out.println(vc);
+		
+		Voto analisi = libretto.ricercaCorso("Analisi 1");
+		System.out.println(analisi);
+		
+		Voto chimica = libretto.ricercaCorso("Chimica");
+		Voto chimicaDoppio = new Voto("Chimica", 25, LocalDate.of(2019, 7, 15));
+		Voto chimicaConflitto = new Voto("Chimica", 29, LocalDate.of(2019, 7, 15));
+		System.out.println(chimica + " doppione di " + chimicaDoppio + "? ->" + libretto.esisteDuplicato(chimicaDoppio));
+		System.out.println(chimica + " conflitto con " + chimicaConflitto + "? ->" + libretto.esisteConflitto(chimicaConflitto));
 	}
 }
